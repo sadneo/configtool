@@ -1,0 +1,18 @@
+TOOL:
+Command line utility to manage themes
+theme (theme to apply)
+--tooldir (directory to place configuration in)
+
+List files that you want to configure through TOOL in
+$XDG_CONFIG_HOME/TOOL/TOOL.conf
+$HOME/.config/TOOL/TOOL.conf
+or exit with message
+
+List themes to use in TOOL in
+TOOL/themes/theme.conf TODO: READ OTHER THEME SPECIFICATIONS
+
+find tool config, 
+load theme specified
+load the files to apply theme to in sequence
+perform substitutions
+next file
