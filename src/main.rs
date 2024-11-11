@@ -2,7 +2,6 @@ use std::{env, fs};
 use std::collections::HashMap;
 use std::path::PathBuf;
 use serde::Deserialize;
-// use serde_json::Result;
 use clap::Parser;
 
 #[derive(Debug, Deserialize)]
@@ -71,6 +70,10 @@ fn main() {
 
     for file in config.files {
         println!("{:?}", file);
-        // perform substitution
+        let mut contents = fs::read_to_string(&file).expect("File should exist");
+        for (key, value) in &theme {
+            contents = contents.replace(key, value);
+        }
+        fs::write(&file, &contents).expect("File write should work");
     }
 }
